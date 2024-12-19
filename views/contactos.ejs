@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Contactos encontrados</h1>
+  <a href="/" class="btn">Volver a la página principal</a>
+
+  <table id="tabla-contactos">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (contactos.length > 0) { %>
+        <% contactos.forEach(contacto => { %>
+          <tr>
+            <td><%= contacto.nombre %></td>
+            <td><%= contacto.apellidos %></td>
+            <td><%= contacto.edad %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="3" style="text-align:center;">No se encontraron resultados</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
